@@ -1,8 +1,16 @@
 // Tarjeta de credito de abradolph
 
+import { TarjetaDeCredito } from "./tarjetaDeCredito.js";
+
+var abradolph = new TarjetaDeCredito(
+  "Abradolph Lincler",
+  "4916119711304546"
+);
+
 console.log("\n" + "Tarjeta de Abradolph" + "\n");
 console.log(abradolph);
 
+/*
 // UfosPark
 
 console.log("\n" + "Ovni de Abradolph" + "\n");
@@ -60,3 +68,4 @@ console.log("\n" + "Morty quiere pack y ovni pero no quedan :(" + "\n");
 
 console.log("\n" + "Pedidos de RickMenus: " + "\n");
 console.log("\n" + "Creditos de los invitad@s: " + "\n");
+*/
