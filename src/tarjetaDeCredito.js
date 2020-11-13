@@ -11,7 +11,7 @@ function TarjetaDeCredito(propietario, numeroTarjeta) {
 }
 
 var getterPasta = {
-  get credit() {
+  get credito() {
     return (this.pasta = pasta);
   },
 };
@@ -30,6 +30,3 @@ function comprobarPasta(pago) {
     return false;
   }
 }
-
-console.log(comprobarPasta(3001));
-console.log(comprobarPasta(3000));
