@@ -3,14 +3,24 @@ var numeroTarjeta = "";
 var pasta = 3000;
 var tipoDeMoneda = "EZI";
 
-export function TarjetaDeCredito(propietario, numeroTarjeta) {
+export { TarjetaDeCredito, getterPasta, getterNumeroTarjeta, comprobarPasta };
+
+function TarjetaDeCredito(propietario, numeroTarjeta) {
   this.propietario = propietario;
   this.numeroTarjeta = numeroTarjeta;
 }
 
-function credit() {
-  return (this.pasta = pasta);
-}
+var getterPasta = {
+  get credit() {
+    return (this.pasta = pasta);
+  },
+};
+
+var getterNumeroTarjeta = {
+  get tarjeta() {
+    return (this.tarjeta = tarjeta);
+  },
+};
 
 function comprobarPasta(pago) {
   if (pasta >= pago) {
