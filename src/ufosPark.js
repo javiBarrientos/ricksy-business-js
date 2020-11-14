@@ -4,7 +4,7 @@ import {
   comprobarPasta,
 } from "./tarjetaDeCredito.js";
 
-export { UfosPark, getterFlota, ufoFlota };
+export { UfosPark, getterFlota, ufoFlota, getUfoOf };
 
 const precioUfo = 500;
 var flotaUfos = {};
@@ -19,4 +19,15 @@ var getterFlota = {
 
 function ufoFlota(ufo) {
   return (flotaUfos[ufo] = null);
+}
+
+function getUfoOf(usuario) {
+  let nombreOvni = "";
+
+  for (let i = 0; i < getterFlota; i++) {
+    if (getterFlota[i] == usuario) {
+      nombreOvni = getterFlota[i];
+    }
+  }
+  return nombreOvni;
 }
