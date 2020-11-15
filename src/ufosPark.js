@@ -1,32 +1,37 @@
 import {
   getterPasta,
   getterNumeroTarjeta,
-  comprobarPasta,
+  pago,
+  pasta,
+  numeroTarjeta,
 } from "./tarjetaDeCredito.js";
 
-export { UfosPark, getterFlota, ufoFlota, getUfoOf };
+export { UfosPark, ufoFlota, dispatch, getUfoOf, flotaUfos };
 
 const precioUfo = 500;
-var flotaUfos = {};
+var flotaUfos = new Map();
 
 function UfosPark() {}
 
-var getterFlota = {
-  get flota() {
-    return (this.flotaUfos = flotaUfos);
-  },
-};
-
 function ufoFlota(ufo) {
-  return (flotaUfos[ufo] = null);
+  flotaUfos.set(ufo, null);
+}
+
+function dispatch(tarjeta) {
+  for (let key of flotaUfos.entries()) {
+    if (key.keys() == null && tarjeta.pasta >= precioUfo) {
+      tarjeta.pago(precioUfo);
+      flotaUfos.set(key.keys(), tarjeta.numeroTarjeta);
+    }
+  }
 }
 
 function getUfoOf(usuario) {
   let nombreOvni = "";
 
-  for (let i = 0; i < getterFlota; i++) {
-    if (getterFlota[i] == usuario) {
-      nombreOvni = getterFlota[i];
+  for (let key of flotaUfos.entries()) {
+    if (key.values() == usuario) {
+      nombreOvni = key.keys();
     }
   }
   return nombreOvni;
