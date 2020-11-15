@@ -1,22 +1,47 @@
 // Tarjeta de credito de abradolph
 
-import { TarjetaDeCredito } from "./tarjetaDeCredito.js";
+import {
+  TarjetaDeCredito,
+  pago,
+  numeroTarjeta,
+  pasta,
+  propietario,
+} from "./tarjetaDeCredito.js";
 
-var abradolph = new TarjetaDeCredito(
-  "Abradolph Lincler",
-  "4916119711304546"
-);
+import {
+  UfosPark,
+  ufoFlota,
+  dispatch,
+  getUfoOf,
+  flotaUfos,
+} from "./ufosPark.js";
 
-console.log("\n" + "Tarjeta de Abradolph" + "\n");
+var abradolph = new TarjetaDeCredito("Abradolph Lincler", "4916119711304546");
+
+console.log("Tarjeta de Abradolph" + "\n");
 console.log(abradolph);
 
-/*
 // UfosPark
 
-console.log("\n" + "Ovni de Abradolph" + "\n");
-console.log(ufosPark.getUfoOf(abradolph.number()));
-console.log("Credito de Abradolph: " + abradolph.credit());
+var ufosPark = new UfosPark();
 
+var ufosId = ["unx", "dox"];
+for (let ufo of ufosId) {
+  ufoFlota(ufo);
+}
+
+console.log("\n" + "print de flotas" + "\n");
+console.log(flotaUfos);
+
+console.log("\n" + "tarjeta abradolph" + "\n");
+dispatch(abradolph.numeroTarjeta);
+console.log(abradolph.numeroTarjeta);
+console.log(flotaUfos);
+
+console.log("\n" + "Ovni de Abradolph" + "\n");
+console.log(getUfoOf(abradolph));
+console.log("Credito de Abradolph: " + abradolph.getterPasta);
+/*
 console.log("\n" + "Abradolph quiere otro ovni" + "\n");
 console.log("Su credito no ha cambiado: " + abradolph.credit());
 console.log("Ovni de Abradolph: " + ufosPark.getUfoOf(abradolph.number()));
