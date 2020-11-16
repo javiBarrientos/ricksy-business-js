@@ -1,6 +1,6 @@
 import { pago, pasta, numeroTarjeta } from "./tarjetaDeCredito.js";
 
-export { UfosPark, ufoFlota, dispatch, getUfoOf };
+export { UfosPark, ufoFlota, dispatch };
 
 const precioUfo = 500;
 var flotaUfos = new Map();
