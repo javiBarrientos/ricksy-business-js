@@ -8,6 +8,15 @@ UfosPark.prototype.addUfo = function (ufo) {
   this.flotaUfos.set(ufo, null);
 };
 
+UfosPark.prototype.dispatch = function (numeroTarjeta) {
+  for (let [key, value] of this.flotaUfos.entries()) {
+    if (value == null && numeroTarjeta.pasta >= this.fee) {
+      numeroTarjeta.pago(this.fee);
+      this.flotaUfos.set(key, numeroTarjeta);
+    }
+  }
+};
+
 function singleOvni() {
   const ufosParkInstance = new UfosPark();
 
@@ -24,19 +33,6 @@ const singletonUfosPark = function () {
 
 export default singletonUfosPark;
 /*
-function ufoFlota(ufo) {
-  flotaUfos.set(ufo, null);
-}
-
-function dispatch(tarjeta) {
-  for (let key of flotaUfos.entries()) {
-    if (key.keys() == null && tarjeta.pasta >= precioUfo) {
-      tarjeta.pago(precioUfo);
-      flotaUfos.set(key.keys(), tarjeta.numeroTarjeta);
-    }
-  }
-}
-
 function getUfoOf(usuario) {
   let nombreOvni = "";
 
