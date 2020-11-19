@@ -6,7 +6,7 @@ export default function TarjetaDeCredito(propietario, numeroTarjeta) {
   this.tipoDeMoneda = "EZI";
 }
 
-TarjetaDeCredito.prototype.comprobarPastaPago = function (pago) {
+TarjetaDeCredito.prototype.pago = function (pago) {
   if (this.pasta >= pago) {
     this.pasta -= pago;
     return true;
