@@ -1,3 +1,4 @@
+// Imports
 import TarjetaDeCredito from "./tarjetaDeCredito.js";
 import singletonUfosPark from "./ufosPark.js";
 
@@ -19,12 +20,11 @@ for (let ufo of ufosId) {
 console.log("\n" + "print de flotas" + "\n");
 console.log(getUfoPark.flotaUfos);
 
-/*
 console.log("\n" + "tarjeta abradolph" + "\n");
-dispatch(abradolph.numeroTarjeta);
+getUfoPark.dispatch(abradolph.numeroTarjeta);
 console.log(abradolph.numeroTarjeta);
-console.log(flotaUfos);
-
+console.log(getUfoPark.flotaUfos);
+/*
 console.log("\n" + "Ovni de Abradolph" + "\n");
 console.log(getUfoOf(abradolph));
 console.log("Credito de Abradolph: " + abradolph.getterPasta);
