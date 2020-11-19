@@ -1,12 +1,29 @@
-import { pago, pasta, numeroTarjeta } from "./tarjetaDeCredito.js";
+// Constructor
+function UfosPark() {
+  this.fee = 500;
+  this.flotaUfos = new Map();
+}
 
-export { UfosPark, ufoFlota };
+UfosPark.prototype.addUfo = function (ufo) {
+  this.flotaUfos.set(ufo, null);
+};
 
-const precioUfo = 500;
-var flotaUfos = new Map();
+function singleOvni() {
+  const ufosParkInstance = new UfosPark();
 
-function UfosPark() {}
+  return {
+    getUfo: function getUfo() {
+      return ufosParkInstance;
+    },
+  };
+}
 
+const singletonUfosPark = function () {
+  return singleOvni();
+};
+
+export default singletonUfosPark;
+/*
 function ufoFlota(ufo) {
   flotaUfos.set(ufo, null);
 }
@@ -30,3 +47,4 @@ function getUfoOf(usuario) {
   }
   return nombreOvni;
 }
+*/
