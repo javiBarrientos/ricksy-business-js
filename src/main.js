@@ -1,20 +1,7 @@
+import TarjetaDeCredito from "./tarjetaDeCredito.js";
+import singletonUfosPark from "./ufosPark.js";
+
 // Tarjeta de credito de abradolph
-
-import {
-  TarjetaDeCredito,
-  pago,
-  numeroTarjeta,
-  pasta,
-  propietario,
-} from "./tarjetaDeCredito.js";
-
-import {
-  UfosPark,
-  ufoFlota,
-  dispatch,
-  getUfoOf,
-  flotaUfos,
-} from "./ufosPark.js";
 
 var abradolph = new TarjetaDeCredito("Abradolph Lincler", "4916119711304546");
 
@@ -22,14 +9,15 @@ console.log("Tarjeta de Abradolph" + "\n");
 console.log(abradolph);
 
 // UfosPark
-
-var ufosPark = new UfosPark();
+var ufoPark = singletonUfosPark();
+var getUfoPark = ufoPark.getUfo();
 
 var ufosId = ["unx", "dox"];
 for (let ufo of ufosId) {
-  ufoFlota(ufo);
+  getUfoPark.addUfo(ufo);
 }
-
+console.log(getUfoPark);
+/*
 console.log("\n" + "print de flotas" + "\n");
 console.log(flotaUfos);
 
@@ -41,6 +29,7 @@ console.log(flotaUfos);
 console.log("\n" + "Ovni de Abradolph" + "\n");
 console.log(getUfoOf(abradolph));
 console.log("Credito de Abradolph: " + abradolph.getterPasta);
+*/
 /*
 console.log("\n" + "Abradolph quiere otro ovni" + "\n");
 console.log("Su credito no ha cambiado: " + abradolph.credit());
