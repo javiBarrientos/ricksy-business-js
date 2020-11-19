@@ -1,5 +1,5 @@
 // Constructor
-function TarjetaDeCredito(propietario, numeroTarjeta) {
+export default function TarjetaDeCredito(propietario, numeroTarjeta) {
   this.propietario = propietario;
   this.numeroTarjeta = numeroTarjeta;
   this.pasta = 3000;
@@ -14,23 +14,3 @@ TarjetaDeCredito.prototype.comprobarPastaPago = function (pago) {
     return false;
   }
 };
-
-/* 
-// Patron singleton, una unica instancia de TarjetaDeCredito
-function singleTarjeta() {
-  const tajetaInstancia = new TarjetaDeCredito();
-
-  return {
-    getTarjeta: function getTarjeta() {
-      return tajetaInstancia;
-    },
-  };
-}
-
-// Export de la variable que devuelve la instancia
-exports.singletonTarjeta = function () {
-  return singleTarjeta();
-};
- */
-
-export default TarjetaDeCredito;
