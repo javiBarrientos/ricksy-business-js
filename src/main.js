@@ -6,79 +6,59 @@ import singletonUfosPark from "./ufosPark.js";
 var abradolph = new TarjetaDeCredito("Abradolph Lincler", "4916119711304546");
 
 console.log("Tarjeta de Abradolph" + "\n");
-console.log(abradolph);
+console.log(abradolph.propietario + " " + abradolph.numeroTarjeta);
 
 // UfosPark
 var ufoPark = singletonUfosPark();
 var getUfoPark = ufoPark.getUfo();
 
+// Dar de alta 2 ufos
 var ufosId = ["unx", "dox"];
 for (let ufo of ufosId) {
   getUfoPark.addUfo(ufo);
 }
 
-console.log("\n" + "print de flotas" + "\n");
-console.log(getUfoPark.flotaUfos);
+// Pago de abradolph
+getUfoPark.dispatch(abradolph);
 
-console.log("\n" + "tarjeta abradolph" + "\n");
-getUfoPark.dispatch(abradolph.numeroTarjeta);
-console.log(abradolph.numeroTarjeta);
-console.log(getUfoPark.flotaUfos);
-/*
-console.log("\n" + "Ovni de Abradolph" + "\n");
-console.log(getUfoOf(abradolph));
-console.log("Credito de Abradolph: " + abradolph.getterPasta);
-*/
-/*
-console.log("\n" + "Abradolph quiere otro ovni" + "\n");
-console.log("Su credito no ha cambiado: " + abradolph.credit());
-console.log("Ovni de Abradolph: " + ufosPark.getUfoOf(abradolph.number()));
+// ID del ufo de de abradolph
+console.log("Ovni de abradolph");
+console.log(getUfoPark.getUfoOf(abradolph));
+console.log("\n");
 
-// UfosPark GearHead
- 
-console.log("Su credito es cero: " + gearHead.credit());
-console.log("No puede reservar ovni: " + ufosPark.getUfoOf(gearHead.number()));
+// Pasta de abradolph
+console.log("Pasta abradolph: " + abradolph.pasta);
+console.log("\n");
 
-// UfosPark Squanchy
+console.log("Abradolph quiere otro ovni");
+getUfoPark.dispatch(abradolph);
+console.log("Su pasta no ha cambiado: " + abradolph.pasta);
+console.log("Ovni de abradolph: " + getUfoPark.getUfoOf(abradolph));
+console.log("\n");
 
-console.log("Su credito es: " + squanchy.credit());
-console.log("Su ovni es: " + ufosPark.getUfoOf(squanchy.number()));
+// gearhead
+console.log("\n" + "Llega gearhead");
+var gearhead = new TarjetaDeCredito("Gearhead", "8888888888888888");
+gearhead.pago(3000);
+getUfoPark.dispatch(gearhead);
+console.log("Su pasta es cero: " + gearhead.pasta);
+console.log("No puede reservar ovni: " + getUfoPark.getUfoOf(gearhead));
 
-// UfosPark Morty
+// squanchy
+console.log("\n" + "Llega squanchy");
+var squanchy = new TarjetaDeCredito("Squanchy", "4444444444444444");
+getUfoPark.dispatch(squanchy);
+console.log("Su pasta es: " + squanchy.pasta);
+console.log("Su ovni es: " + getUfoPark.getUfoOf(squanchy));
 
-console.log("Su credito no ha cambiado: " + morty.credit());
-console.log("No hay ovni Morty: " + ufosPark.getUfoOf(morty.number()));
+// morty
+console.log("\n" + "Algun ovni para morty?");
+var morty = new TarjetaDeCredito("Morty", "0000000000000000");
+getUfoPark.dispatch(morty);
+console.log("Su pasta no ha cambiado: " + morty.pasta);
+console.log("No hay ovni para morty: " + getUfoPark.getUfoOf(morty));
 
 // Flota de ovnis
-
-console.log(ufosPark);
-
-// CrystalExpender
-
-console.log("\n" + "Packs" + "\n");
-console.log(packExpender);
-
-// Expender Abradolph
-
-console.log("\n" + "Abradolph compra su pack" + "\n");
-console.log("Packs: " + packExpender);
-console.log("Credito de Abradolph: " + abradolph.credit());
-
-// Expender GearHead
-
-console.log("\n" + "GearHead sin credito para su pack" + "\n");
-console.log("Packs: " + packExpender);
-console.log("Credito de GearHead: " + gearHead.credit());
-
-// Receptivo
-
-console.log("Llega Squanchy");
-console.log("Llega GearHead");
-console.log("Llega Birdpearson!");
-console.log("\n" + "Morty quiere pack y ovni pero no quedan :(" + "\n");
-
-// 10!!
-
-console.log("\n" + "Pedidos de RickMenus: " + "\n");
-console.log("\n" + "Creditos de los invitad@s: " + "\n");
-*/
+console.log("\n" + "Flota de ovnis");
+ufosId.push("trex");
+console.log(ufosId);
