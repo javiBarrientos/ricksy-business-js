@@ -75,3 +75,9 @@ expender.dispatch(abradolph);
 console.log("\n" + "Abradolph compra pack");
 console.log("Packs: " + expender.stock);
 console.log("Credito de abradolph: " + abradolph.pasta);
+
+// Gearhead sin pasta :(
+console.log("\n" + "Gearhead no tiene pasta :(");
+expender.dispatch(gearhead);
+console.log("Packs: " + expender.stock);
+console.log("Credito de gearhead: " + gearhead.pasta);
