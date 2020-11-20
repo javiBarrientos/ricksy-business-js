@@ -8,11 +8,11 @@ UfosPark.prototype.addUfo = function (ufo) {
   this.flotaUfos.set(ufo, null);
 };
 
-UfosPark.prototype.dispatch = function (numeroTarjeta) {
+UfosPark.prototype.dispatch = function (propietario) {
   for (let [key, value] of this.flotaUfos.entries()) {
-    if (value == null && numeroTarjeta.pasta >= this.fee) {
-      numeroTarjeta.pago(this.fee);
-      this.flotaUfos.set(key, numeroTarjeta);
+    if (value == null && propietario.pasta >= this.fee) {
+      propietario.pago(this.fee);
+      this.flotaUfos.set(key, propietario);
     }
   }
 };
