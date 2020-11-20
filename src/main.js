@@ -1,6 +1,7 @@
 // Imports
 import TarjetaDeCredito from "./tarjetaDeCredito.js";
 import singletonUfosPark from "./ufosPark.js";
+import CrystalExpender from "./crystalExpender.js";
 
 // Tarjeta de credito de abradolph
 var abradolph = new TarjetaDeCredito("Abradolph Lincler", "4916119711304546");
@@ -62,3 +63,15 @@ console.log("No hay ovni para morty: " + getUfoPark.getUfoOf(morty));
 console.log("\n" + "Flota de ovnis");
 ufosId.push("trex");
 console.log(ufosId);
+
+// Crystal Expender
+var expender = new CrystalExpender(3, 50);
+console.log("\n" + "Crystal expender");
+console.log(expender.stock + " " + expender.coste);
+
+// Abradolph compra pack de bienvenida
+expender.dispatch(abradolph);
+
+console.log("\n" + "Abradolph compra pack");
+console.log("Packs: " + expender.stock);
+console.log("Credito de abradolph: " + abradolph.pasta);
