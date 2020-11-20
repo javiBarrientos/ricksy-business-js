@@ -17,6 +17,17 @@ UfosPark.prototype.dispatch = function (numeroTarjeta) {
   }
 };
 
+UfosPark.prototype.getUfoOf = function (usuario) {
+  let nombreOvni = "";
+
+  for (let [key, value] of this.flotaUfos.entries()) {
+    if (value == usuario) {
+      nombreOvni = key;
+    }
+  }
+  return nombreOvni;
+};
+
 function singleOvni() {
   const ufosParkInstance = new UfosPark();
 
@@ -32,15 +43,3 @@ const singletonUfosPark = function () {
 };
 
 export default singletonUfosPark;
-/*
-function getUfoOf(usuario) {
-  let nombreOvni = "";
-
-  for (let key of flotaUfos.entries()) {
-    if (key.values() == usuario) {
-      nombreOvni = key.keys();
-    }
-  }
-  return nombreOvni;
-}
-*/
