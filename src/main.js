@@ -10,8 +10,7 @@ console.log("Tarjeta de Abradolph" + "\n");
 console.log(abradolph.propietario + " " + abradolph.numeroTarjeta);
 
 // UfosPark
-var ufoPark = singletonUfosPark();
-var getUfoPark = ufoPark.getUfo();
+var getUfoPark = singletonUfosPark().getUfo();
 
 // Dar de alta 2 ufos
 var ufosId = ["unx", "dox"];
