@@ -13,6 +13,7 @@ UfosPark.prototype.dispatch = function (propietario) {
     if (value == null && propietario.pasta >= this.fee) {
       propietario.pago(this.fee);
       this.flotaUfos.set(key, propietario);
+      break;
     }
   }
 };
