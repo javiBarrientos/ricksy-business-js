@@ -1,6 +1,7 @@
-import TarjetaDeCredito from "../tarjetaDeCredito.js";
+const tarjeta = require("../tarjetaDeCredito");
 
-var testTarjeta = new TarjetaDeCredito("Maicol", "1234567890");
+var testTarjeta = new tarjeta("Maicol", "1234567890");
 
+test("", () => {
 expect(testTarjeta.numeroTarjeta).toBe("1234567890");
-
+});
