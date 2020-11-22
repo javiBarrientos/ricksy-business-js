@@ -1,4 +1,4 @@
-export default function CrystalExpender(stock, coste) {
+function CrystalExpender(stock, coste) {
   this.stock = stock;
   this.coste = coste;
 }
@@ -11,3 +11,5 @@ CrystalExpender.prototype.dispatch = function (propietario) {
     }
   }
 };
+
+module.exports = CrystalExpender;

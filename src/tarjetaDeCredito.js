@@ -1,6 +1,5 @@
 // Constructor
-// Para que los test funcionen, eliminar export default, descomentar module.export
-export default function TarjetaDeCredito(propietario, numeroTarjeta) {
+function TarjetaDeCredito(propietario, numeroTarjeta) {
   this.propietario = propietario;
   this.numeroTarjeta = numeroTarjeta;
   this.pasta = 3000;
@@ -16,4 +15,4 @@ TarjetaDeCredito.prototype.pago = function (pago) {
   }
 };
 
-// module.exports = TarjetaDeCredito;
+module.exports = TarjetaDeCredito;
