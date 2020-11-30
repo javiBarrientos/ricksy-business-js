@@ -1,7 +1,7 @@
 // Imports
-var TarjetaDeCredito = require("./tarjetaDeCredito.js");
-var singletonUfosPark = require("./ufosPark.js");
-var CrystalExpender = require("./crystalExpender.js");
+var TarjetaDeCredito = require("./tarjetaDeCredito/tarjetaDeCredito.js");
+var singletonUfosPark = require("./ufosPark/ufosPark.js");
+var CrystalExpender = require("./crystalExpender/crystalExpender.js");
 
 // Tarjeta de credito de abradolph
 var abradolph = new TarjetaDeCredito("Abradolph Lincler", "4916119711304546");
