@@ -10,19 +10,30 @@ UfosPark.prototype.addUfo = function (ufo) {
 
 UfosPark.prototype.dispatch = function (propietario) {
   for (let [key, value] of this.flotaUfos.entries()) {
-    if (value == null && propietario.pasta >= this.fee) {
+    if (
+      this.validarOwnerUfo(value, propietario.numeroTarjeta) &&
+      propietario.pasta >= this.fee
+    ) {
       propietario.pago(this.fee);
-      this.flotaUfos.set(key, propietario);
+      this.flotaUfos.set(key, propietario.numeroTarjeta);
+      break;
     }
-    break;
   }
+};
+
+UfosPark.prototype.validarOwnerUfo = function (valor, usuario) {
+  let comprobarPosicion = Array.from(this.flotaUfos.values()).includes(
+    usuario,
+    0
+  );
+  return !comprobarPosicion && valor == null;
 };
 
 UfosPark.prototype.getUfoOf = function (usuario) {
   let nombreOvni = "";
 
   for (let [key, value] of this.flotaUfos.entries()) {
-    if (value == usuario) {
+    if (value == usuario.numeroTarjeta) {
       nombreOvni = key;
     }
   }
