@@ -25,7 +25,6 @@ ufoPark.dispatch(abradolph);
 // ID del ufo de de abradolph
 console.log("Ovni de abradolph");
 console.log(ufoPark.getUfoOf(abradolph));
-console.log("\n");
 
 // Pasta de abradolph
 console.log("Pasta abradolph: " + abradolph.pasta);
