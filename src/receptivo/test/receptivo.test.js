@@ -3,6 +3,7 @@ const { expect } = require("@jest/globals");
 const testReceptivo = require("../receptivo");
 const testUfosPark = require("../../ufosPark/ufosPark");
 const testTarjetaDeCredito = require("../../tarjetaDeCredito/tarjetaDeCredito");
+const testCrystalExpender = require("../../crystalExpender/crystalExpender");
 
 /*
 var receptivoTest = testReceptivo().getReceptivo();
