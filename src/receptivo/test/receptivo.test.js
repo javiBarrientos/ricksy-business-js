@@ -1,0 +1,15 @@
+const { expect } = require("@jest/globals");
+
+const testReceptivo = require("../receptivo");
+const testUfosPark = require("../../ufosPark/ufosPark");
+const testTarjetaDeCredito = require("../../tarjetaDeCredito/tarjetaDeCredito");
+
+/*
+var receptivoTest = testReceptivo().getReceptivo();
+var ufosParkTest = testUfosPark().getUfo();
+var tarjetaTest = new testTarjetaDeCredito();
+*/
+
+test("Creo ufosPark", () => {
+  expect(testUfosPark().getUfo()).toBeTruthy;
+});
