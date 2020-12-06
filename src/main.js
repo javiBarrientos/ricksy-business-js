@@ -12,7 +12,7 @@ console.log("Tarjeta de Abradolph" + "\n");
 console.log(abradolph.propietario + " " + abradolph.numeroTarjeta);
 
 // UfosPark
-var ufoPark = singletonUfosPark().getUfo();
+var ufoPark = singletonUfosPark.getUfo();
 
 // Dar de alta 2 ufos
 var ufosId = ["unx", "dox"];
@@ -83,7 +83,8 @@ console.log("Packs: " + expender.stock);
 console.log("Credito de gearhead: " + gearhead.pasta);
 
 // Receptivo
-var receptivo = singletonReceptivo().getReceptivo();
+console.log("\n" + "Hola receptivo");
+var receptivo = singletonReceptivo.getReceptivo();
 
 receptivo.registra(expender);
 receptivo.registra(ufoPark);
