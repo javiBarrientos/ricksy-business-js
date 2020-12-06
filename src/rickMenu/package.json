@@ -1,0 +1,19 @@
+{
+  "name": "rickmenu",
+  "version": "1.0.0",
+  "description": "package rickmenu",
+  "main": "rickMenu.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javiBarrientos/ricksybusiness.git"
+  },
+  "author": "Javi Barrientos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javiBarrientos/ricksybusiness/issues"
+  },
+  "homepage": "https://github.com/javiBarrientos/ricksybusiness#readme"
+}

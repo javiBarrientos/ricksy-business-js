@@ -3,6 +3,7 @@ var TarjetaDeCredito = require("./tarjetaDeCredito/tarjetaDeCredito.js");
 var singletonUfosPark = require("./ufosPark/ufosPark.js");
 var CrystalExpender = require("./crystalExpender/crystalExpender.js");
 var singletonReceptivo = require("./receptivo/receptivo.js");
+var RickMenu = require("./rickMenu/rickMenu.js");
 
 // Tarjeta de credito de abradolph
 var abradolph = new TarjetaDeCredito("Abradolph Lincler", "4916119711304546");
@@ -108,6 +109,28 @@ console.log("\n" + "Morty quiere pack y ovni pero no quedan :(");
 var morty = new TarjetaDeCredito("Birdpearson", "0000000000000000");
 receptivo.dispatch(morty);
 mostrarReserva(morty, expender, ufoPark);
+
+// RickMenu
+var menu = new RickMenu(100, 10);
+
+// Receptivo registra el menu
+receptivo.registra(menu);
+
+// Lista de las tarjetas
+var cards = [abradolph, squanchy, morty, gearhead, birdpearson];
+
+for (let card of cards) {
+  receptivo.dispatch(card);
+}
+
+console.log("\n" + "Pedidos de RickMenus:");
+console.log(menu);
+console.log("\n" + "Creditos de los invitados/as:");
+
+for (let card of cards) {
+  console.log(card);
+  console.log();
+}
 
 // Mostrar reserva
 function mostrarReserva(usuario, pack, ovni) {
