@@ -74,7 +74,7 @@ Crystal expender
 */
 var expender = new CrystalExpender(
   impostorExpender.expender.stock,
-  impostorExpender.expender.stock
+  impostorExpender.expender.coste
 );
 console.log("\n" + "Crystal expender");
 console.log(expender.stock + " " + expender.coste);
