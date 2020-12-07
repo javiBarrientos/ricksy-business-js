@@ -1,4 +1,3 @@
-/*
 const { expect } = require("@jest/globals");
 const testTarjetaDeCredito = require("../../tarjetaDeCredito/tarjetaDeCredito");
 const testCrystalExpender = require("../../crystalExpender/crystalExpender");
@@ -9,9 +8,12 @@ beforeEach(() => {
   receptivo = singletonReceptivo.getReceptivo();
   ufosPark = singletonUfosPark.getUfo();
   packExpender = new testCrystalExpender(100, 50);
+  card = new testTarjetaDeCredito("Abradolf Lincler", "4916119711304546");
 
-  receptivo.registra(ufosPark);
-  receptivo.registra(packExpender);
+  ufosId = ["unx", "dox", "trex"];
+  for (let ufo in ufosId) {
+    ufosPark.addUfo(ufosId[ufo]);
+  }
 });
 
 test("Comprobar singleton de ufosPark", () => {
@@ -25,13 +27,14 @@ test("Comprobar singleton de receptivo", () => {
 });
 
 test("Comprobar receptivo chido", () => {
-  let card = new testTarjetaDeCredito("Abradolf Lincler", "4916119711304546");
   receptivo.dispatch(card);
+  packExpender.dispatch(card);
 
-  expect(card.pasta).toBe(2450);
+  expect(card.pasta).toBe(2950);
+  expect(packExpender.stock).toBe(99);
+  ufosPark.dispatch(card);
 
   expect(
     Array.from(ufosPark.flotaUfos.values()).includes(card.numeroTarjeta)
-  ).toBe("4916119711304546");
+  ).toBe(true);
 });
-*/
