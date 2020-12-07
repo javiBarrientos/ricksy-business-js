@@ -4,6 +4,9 @@ var singletonUfosPark = require("./ufosPark/ufosPark.js");
 var CrystalExpender = require("./crystalExpender/crystalExpender.js");
 var singletonReceptivo = require("./receptivo/receptivo.js");
 var RickMenu = require("./rickMenu/rickMenu.js");
+var impostorUfosPark = require("./data/impostorPark.json");
+var impostorExpender = require("./data/impostorExpender.json");
+var impostorMenu = require("./data/impostorMenu.json");
 
 // Tarjeta de credito de abradolph
 var abradolph = new TarjetaDeCredito("Abradolph Lincler", "4916119711304546");
@@ -11,11 +14,13 @@ var abradolph = new TarjetaDeCredito("Abradolph Lincler", "4916119711304546");
 console.log("Tarjeta de Abradolph" + "\n");
 console.log(abradolph.propietario + " " + abradolph.numeroTarjeta);
 
-// UfosPark
+/*
+Ufos park
+*/
 var ufoPark = singletonUfosPark.getUfo();
 
 // Dar de alta 2 ufos
-var ufosId = ["unx", "dox"];
+var ufosId = impostorUfosPark.park.flota;
 for (let ufo of ufosId) {
   ufoPark.addUfo(ufo);
 }
@@ -64,8 +69,13 @@ console.log("\n" + "Flota de ovnis");
 ufosId.push("trex");
 console.log(ufosId);
 
-// Crystal Expender
-var expender = new CrystalExpender(3, 50);
+/*
+Crystal expender
+*/
+var expender = new CrystalExpender(
+  impostorExpender.expender.stock,
+  impostorExpender.expender.stock
+);
 console.log("\n" + "Crystal expender");
 console.log(expender.stock + " " + expender.coste);
 
@@ -82,7 +92,9 @@ expender.dispatch(gearhead);
 console.log("Packs: " + expender.stock);
 console.log("Credito de gearhead: " + gearhead.pasta);
 
-// Receptivo
+/*
+Receptivo
+*/
 console.log("\n" + "Hola receptivo");
 var receptivo = singletonReceptivo.getReceptivo();
 
@@ -111,8 +123,10 @@ var morty = new TarjetaDeCredito("Birdpearson", "0000000000000000");
 receptivo.dispatch(morty);
 mostrarReserva(morty, expender, ufoPark);
 
-// RickMenu
-var menu = new RickMenu(100, 10);
+/*
+Rick menu
+*/
+var menu = new RickMenu(impostorMenu.menu.stock, impostorMenu.menu.coste);
 
 // Receptivo registra el menu
 receptivo.registra(menu);
