@@ -2,7 +2,7 @@ const tarjetaDeCredito = require("../../tarjetaDeCredito/tarjetaDeCredito");
 const crystalExpender = require("../crystalExpender");
 
 beforeEach(() => {
-  card = new tarjetaDeCredito("Maikol", 1234567890);
+  card = new tarjetaDeCredito("Maikol", "1234567890");
   expender = new crystalExpender(10, 50);
 });
 
