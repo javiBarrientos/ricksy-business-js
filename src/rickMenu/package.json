@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/javiBarrientos/ricksybusiness/issues"
   },
-  "homepage": "https://github.com/javiBarrientos/ricksybusiness#readme"
+  "homepage": "https://github.com/javiBarrientos/ricksybusiness#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }
