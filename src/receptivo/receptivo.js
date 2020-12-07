@@ -12,18 +12,14 @@ Receptivo.prototype.dispatch = function (propietario) {
   }
 };
 
-function singleReceptivo() {
+const singletonReceptivo = (function singleReceptivo() {
   const receptivoInstance = new Receptivo();
 
   return {
-    getReceptivo: function getReceptivo() {
+    getReceptivo: function () {
       return receptivoInstance;
     },
   };
-}
-
-const singletonReceptivo = function () {
-  return singleReceptivo();
-};
+})();
 
 module.exports = singletonReceptivo;

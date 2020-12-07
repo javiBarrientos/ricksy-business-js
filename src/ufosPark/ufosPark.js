@@ -40,18 +40,14 @@ UfosPark.prototype.getUfoOf = function (usuario) {
   return nombreOvni;
 };
 
-function singleOvni() {
+const singletonUfosPark = (function singleOvni() {
   const ufosParkInstance = new UfosPark();
 
   return {
-    getUfo: function getUfo() {
+    getUfo: function () {
       return ufosParkInstance;
     },
   };
-}
-
-const singletonUfosPark = function () {
-  return singleOvni();
-};
+})();
 
 module.exports = singletonUfosPark;

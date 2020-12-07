@@ -4,11 +4,9 @@ function CrystalExpender(stock, coste) {
 }
 
 CrystalExpender.prototype.dispatch = function (propietario) {
-  if (this.stock > 0) {
-    if (propietario.pasta >= this.coste) {
-      propietario.pago(this.coste);
-      this.stock -= 1;
-    }
+  if (this.stock > 0 && propietario.pasta >= this.coste) {
+    propietario.pago(this.coste);
+    this.stock -= 1;
   }
 };
 
