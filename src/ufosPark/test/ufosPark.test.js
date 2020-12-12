@@ -26,3 +26,13 @@ test("Comprobar dispatch de ufos", () => {
   ufosPark.dispatch(segundaCard);
   expect(ufosPark.flotaUfos).toMatchObject(newPark);
 });
+
+test("validarOwnerUfo false", () => {
+  ufosPark.dispatch(card);
+
+  expect(ufosPark.validarOwnerUfo(card.numeroTarjeta)).toBeFalsy();
+});
+
+test("validarOwnerUfo true", () => {
+  expect(ufosPark.validarOwnerUfo(card.numeroTarjeta)).toBeTruthy();
+});
