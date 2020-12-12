@@ -11,8 +11,9 @@ UfosPark.prototype.addUfo = function (ufo) {
 UfosPark.prototype.dispatch = function (propietario) {
   for (let [key, value] of this.flotaUfos.entries()) {
     if (
-      this.validarOwnerUfo(value, propietario.numeroTarjeta) &&
-      propietario.pasta >= this.fee
+      this.validarOwnerUfo(propietario.numeroTarjeta) &&
+      propietario.pasta >= this.fee &&
+      value == null
     ) {
       propietario.pago(this.fee);
       this.flotaUfos.set(key, propietario.numeroTarjeta);
@@ -21,12 +22,8 @@ UfosPark.prototype.dispatch = function (propietario) {
   }
 };
 
-UfosPark.prototype.validarOwnerUfo = function (valor, usuario) {
-  let comprobarPosicion = Array.from(this.flotaUfos.values()).includes(
-    usuario,
-    0
-  );
-  return !comprobarPosicion && valor == null;
+UfosPark.prototype.validarOwnerUfo = function (usuario) {
+  return !Array.from(this.flotaUfos.values()).includes(usuario);
 };
 
 UfosPark.prototype.getUfoOf = function (usuario) {
