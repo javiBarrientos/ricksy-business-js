@@ -66,8 +66,9 @@ console.log("No hay ovni para morty: " + ufoPark.getUfoOf(morty));
 
 // Flota de ovnis
 console.log("\n" + "Flota de ovnis");
-ufosId.push("trex");
-console.log(ufosId);
+ufoPark.flotaUfos.set("trex", null);
+ufosId.push("cuatrox");
+console.log(ufoPark.flotaUfos.keys());
 
 /*
 Crystal expender
@@ -119,7 +120,7 @@ mostrarReserva(birdpearson, expender, ufoPark);
 
 // Morty
 console.log("\n" + "Morty quiere pack y ovni pero no quedan :(");
-var morty = new TarjetaDeCredito("Birdpearson", "0000000000000000");
+var morty = new TarjetaDeCredito("Morty", "0000000000000000");
 receptivo.dispatch(morty);
 mostrarReserva(morty, expender, ufoPark);
 
