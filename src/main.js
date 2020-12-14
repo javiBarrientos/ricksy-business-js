@@ -66,8 +66,7 @@ console.log("No hay ovni para morty: " + ufoPark.getUfoOf(morty));
 
 // Flota de ovnis
 console.log("\n" + "Flota de ovnis");
-ufoPark.flotaUfos.set("trex", null);
-ufosId.push("cuatrox");
+ufoPark.addUfo("trex");
 console.log(ufoPark.flotaUfos.keys());
 
 /*
