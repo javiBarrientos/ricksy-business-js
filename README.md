@@ -1,6 +1,6 @@
 # Ricksy Business - JS
 
-Examen de Febrero de 2020 principalmente programado en Java. La intencion de este proyecto es aprender las bases de JavaScript como la programacion prototipada, programacion funcional, ademas de aprender a usar el patron SINGLETON.
+Examen de Febrero de 2020 principalmente programado en JavaScript. La intencion de este proyecto es aprender las bases de JavaScript como la programacion prototipada, programacion funcional, ademas de aprender a usar el patron SINGLETON.
 
 ## Historias de usuario
 
